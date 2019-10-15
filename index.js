@@ -68,7 +68,7 @@ app.post('/add',async (req,res) => {
       res.end(error);
       //console.log(result);
     });
-  }
+  };
 
   var determin = {'determin': judgement};
   //console.log(determin);
