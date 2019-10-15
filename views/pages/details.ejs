@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<% function name(rows){ return rows; }%>
+<% r = rows.find(name)%>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= r.name %></title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/details.css">
+    <body>
+        <div class="box-1">
+        <h2><%= r.name%> Details</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Fly</th>
+                <th>Fight</th>
+                <th>Fire</th>
+                <th>Water</th>
+                <th>Electric</th>
+                <th>Frozen</th>
+                <th>Total</th>
+                <th>Trainer</th>
+            </tr>
+            <tr>
+                <td><%= r.name %></td>
+                <td><%= r.weight %></td>
+                <td><%= r.height %></td>
+                <td><%= r.fly %></td>
+                <td><%= r.fight %></td>
+                <td><%= r.fire %></td>
+                <td><%= r.water %></td>
+                <td><%= r.electric %></td>
+                <td><%= r.frozen %></td>
+                <td><%= r.total %></td>
+                <td><%= r.trainer %></td>
+            </tr>
+        </table>
+        <table>
+            <tr><form action="/tokimon" method="POST">
+                  <button type="submit">Back To Tokimon</button>
+                </form>
+            </tr>
+            <tr><form action="/tokimon/<%= r.name%>/details/delete" method="POST">
+                  <button class="delete" type="submit">Delete This Tokimon</button>
+                </form>
+            </tr>
+            <tr><form action="/tokimon/<%= r.name%>/details/edit" method="POST">
+                  <button class="edit" type="submit">Edit This Tokimon</button>
+                </form>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

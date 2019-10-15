@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<% function name(rows){ return rows; }%>
+<% r = rows.find(name)%>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit <%= r.name%></title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+    <script src="/js/edit.js"></script>
+    <body>
+        <div class="box-1">
+        <h2>Edit <%= r.name%></h2><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Fly</th>
+                <th>Fight</th>
+                <th>Fire</th>
+                <th>Water</th>
+                <th>Electric</th>
+                <th>Frozen</th>
+                <th>Total</th>
+                <th>Trainer</th>
+            </tr>
+            <tr>
+                <form action="/tokimon/<%= r.name%>/details/edit/update" method="POST">
+                <td><%= r.name%></td>
+                <td><input type="number" name="newWe" id="newWe" placeholder="<%= r.weight%>" min="0"></td>
+                <td><input type="number" name="newHe" id="newHe" placeholder="<%= r.height%>" min="0"></td>
+                <td><input type="number" name="newFl" id="newFl" placeholder="<%= r.fly%>" min="0" max="100" oninput="total()"></td>
+                <td><input type="number" name="newFi" id="newFi" placeholder="<%= r.fight%>" min="0" max="100" oninput="total()"></td>
+                <td><input type="number" name="newFir" id="newFir" placeholder="<%= r.fire%>" min="0" max="100" oninput="total()"></td>
+                <td><input type="number" name="newWa" id="newWa" placeholder="<%= r.water%>" min="0" max="100" oninput="total()"></td>
+                <td><input type="number" name="newEl" id="newEl" placeholder="<%= r.electric%>" min="0" max="100" oninput="total()"></td>
+                <td><input type="number" name="newFr" id="newFr" placeholder="<%= r.frozen%>" min="0" oninput="total()"></td>
+                <td id="total"></td>
+                <td><input type="text" name="newTr" id="newTr" placeholder="<%= r.trainer%>"></td>
+                <button class="update" type="submit">Update <%= r.name%> Details</button>
+                </form>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <form action="/tokimon/<%=r.name%>/details" method="GET">
+                    <button class="back" type="submit">Back To <%= r.name%> Details</button>
+                </form>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

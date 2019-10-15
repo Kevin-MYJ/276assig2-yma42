@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Add Tokimon</title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/add.css">
+    <body>
+        <div class="box-1">
+        <% if(determin == 'news'){ %>
+            <p>Add in the Database!!!</p>
+        <%}else if(determin == 'empty'){%>
+            <p>Some input is empty. Please check your input!!</p>
+        <%}else{%>
+            <p>Tokimon is already exist. Please update it in its details!!</p>
+        <%};%>
+        <br><br>
+        <table>
+            <tr><form action="/home" method="POST">
+                <button type="submit">Home</button>
+                </form>
+            </tr>
+            <tr><form action="/tokimon" method="POST">
+              <button type="submit">Back to Tokimon</button>
+                </form>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Compare</title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/compare.css">
+    <body>
+        <div class="box-1">
+            <h2>Choose 2 Tokimons to compare</h2>
+            <br>
+            <br>
+            <form action="/tokimon/compare/result" method="POST">
+            <p>Choose attribute :<select name="attribute" id="attribute">
+                    <option selected="selected">weight</option>
+                    <option>height</option>
+                    <option>height</option>
+                    <option>fly</option>
+                    <option>fight</option>
+                    <option>fire</option>
+                    <option>water</option>
+                    <option>electric</option>
+                    <option>frozen</option>
+                    <option>total</option>
+                </select>
+            </p>
+            <p>First Tokimon: <select name="compare1" id="compare">
+                <% names.forEach(function(r) {%>
+                    <option value="<%=r.name%>"><%=r.name%></option>
+                <% });%>
+                </select>
+            </p>
+            
+            <p>Second Tokimon: <select name="compare2" id="compare">
+                    <% names.forEach(function(r) {%>
+                        <option value="<%=r.name%>"><%=r.name%></option>
+                    <% });%>
+                </select>
+            </p>
+            <button type="submit">Compare</button>
+        </form>
+        </div>
+    </body>
+</html>

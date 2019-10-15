@@ -1,0 +1,43 @@
+body{
+    background-image: url('../image/tokimon.jpeg');
+    background-position: auto;
+    font-size: 20px;
+    text-align: center;
+}
+
+.box-1{
+    background-color: antiquewhite;
+    width: 80%;
+    margin: auto;
+    border: 3px black solid;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+input{
+    width: 150px;
+    height: 20px;
+}
+button[class="button1"]{
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+}
+button:hover[class="button1"]{
+    background-color: green;
+}
+button[class="back"]{
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    margin: 15px 20%;
+}
+button:hover[class="back"]{
+    background-color: green;
+}

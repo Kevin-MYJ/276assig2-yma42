@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tokimons Data</title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/tokimon.css">
+    <body>
+        <br>
+        <div class="box-1">
+        <h2>Tokimons</h2><br>
+        <!-- <p><a href="/tokimon/new">Add New Tokimon</a></p><br> -->
+        <table id="details">
+            <tr>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Fly</th>
+                <th>Fight</th>
+                <th>Fire</th>
+                <th>Water</th>
+                <th>Electric</th>
+                <th>Frozen</th>
+                <th>Total</th>
+                <th>Trainer</th>
+            </tr>
+            <% if (rows != 0){ %>
+            <% rows.forEach(function(r) { %>
+                <tr>
+                    <td class="name"><a href="/tokimon/<%=r.name%>/details"><%= r.name %></a></td>
+                    <td><%= r.weight %></td>
+                    <td><%= r.height %></td>
+                    <td><%= r.fly %></td>
+                    <td><%= r.fight %></td>
+                    <td><%= r.fire %></td>
+                    <td><%= r.water %></td>
+                    <td><%= r.electric %></td>
+                    <td><%= r.frozen %></td>
+                    <td><%= r.total %></td>
+                    <td><%= r.trainer %></td>
+                </tr>
+            <% }); %>
+            <% } %>
+        </table>
+        <br><br><br>
+        <table class="back">
+            <tr><form action="/home" method="POST">
+                  <button class="back" type="submit">Home</button>
+                </form>
+            </tr>
+            <tr><form action="" method="POST">
+                  <button class="local" type="button">Tokimon</button>
+                </form>
+            </tr>
+            <tr>
+                <form action="/tokimon/compare" method="POST">
+                <button class="compare" type="submit">Compare</button>
+                </form>
+            </tr>
+            <!-- <tr>
+                <form action="/tokimon/display" method="POST">
+                <button class="display" type="submit">Display</button>
+                </form>
+            </tr> -->
+        </table>
+        </div>
+    </body>
+</html>

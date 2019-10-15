@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<% nam1 = data.nam1%>
+<% nam2 = data.nam2%>
+<% arr1 = data.comp1%>
+<% arr2 = data.comp2%>
+<% num1 = Number(arr1)%>
+<% num2 = Number(arr2)%>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Compare Result</title>
+    </head>
+    <link rel="stylesheet" href="/stylesheets/result.css">
+    <body>
+        <div class="box-1">
+            <h2>The Result of Comparing <%=nam1%> And <%=nam2%></h2>
+            <% if (nam1 == nam2) {%>
+                <p> The Same Tokimon</p>
+            <% } else { %>
+                <% if ( num1 > num2) { %>
+                    <p>The Value of <%= nam1%> is greater than that of <%= nam2%></p>
+                <% } else if ( num1 < num2 ) {%>
+                    <p>The Value of <%= nam1%> is smaller than that of <%= nam2%></p>
+                <% } else { %>
+                    <p><%=nam1%> And <%=nam2%> have same value</p>
+                <%}%>
+            <%}%>
+            <table class="box-2">
+                <tr><form action="/home" method="POST">
+                    <button type="submit">Home</button>
+                </form></tr>
+                <tr><form action="/tokimon" method="POST">
+                    <button type="submit">Tokimon</button>
+                </form></tr>
+                <tr><form action="/tokimon/compare" method="POST">
+                    <button type="submit">Compare</button>
+                </form></tr>
+            </table>
+        </div>
+    </body>
+</html>
+
