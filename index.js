@@ -11,7 +11,7 @@ const pool = new Pool({
 app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM test_table');
+    const result = await client.query(`selecte * from tokimon`);
     const results = { 'results': (result) ? result.rows : null};
     res.render('pages/db', results );
     client.release();
@@ -30,7 +30,7 @@ app.get('/', (req, res) => res.render('pages/home1'));
 app.post('/home', (req, res) => res.redirect('/'));
 
 app.post('/tokimon', (req,res) => {
-    var getUserQuery = `SELECT * FROM tokimon ORDER BY name ASC;`;
+    var getUserQuery = `select * from tokimon order by name ASC;`;
     //console.log(getUserQuery);
     pool.query(getUserQuery, (error, result) => {
       if(error)
@@ -61,7 +61,7 @@ app.post('/add',async (req,res) => {
   }
   else{
     var client = await pool.connect();
-    var check = await client.query('SELECT * FROM tokimon ORDER BY name ASC');
+    var check = await client.query(`SELECT * FROM tokimon ORDER BY name ASC`);
     var checking = (check) ? check.rows : null;
     //console.log(checking);
     checking.forEach(function(t){
