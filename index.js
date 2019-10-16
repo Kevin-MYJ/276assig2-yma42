@@ -175,6 +175,7 @@ app.post('/tokimon/:name/details/edit/update', async(req,res) => {
   client.release();
 });
 
+//////////////////////////////////// New Feature 1 ///////////////////////////////////
 app.post('/trainer', (req,res) => {
   res.render('pages/trainer')
 });
@@ -187,7 +188,9 @@ app.post('/trainer/addTokimon', async(req,res) => {
   res.render('pages/addTokimon', trainers);
   client.release();
 });
+//////////////////////////////////// New Feature 1 ///////////////////////////////////
 
+////////////////////////// Incomplete Code/////////////////////////////////
 app.post('/tokimon/compare', async(req,res) => {
   var client = await pool.connect();
   var getUserQuery = await client.query(`SELECT name FROM tokimon`);
@@ -219,7 +222,9 @@ app.post('/tokimon/compare/result', async(req,res) => {
   res.render('pages/result', datas);
   client.release();
 });
+////////////////////////// Incomplete Code/////////////////////////////////
 
+//////////////////////////////////// New Feature 2 ///////////////////////////////////
 app.post('/tokimon/display', async(req,res) => {
   var client = await pool.connect();
   var display = await client.query(`SELECT * FROM tokimon;`);
@@ -228,5 +233,6 @@ app.post('/tokimon/display', async(req,res) => {
   res.render('pages/display', displays);
   client.release();
 });
+//////////////////////////////////// New Feature 2 ///////////////////////////////////
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
