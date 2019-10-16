@@ -29,6 +29,26 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/home1'));
 app.post('/home', (req, res) => res.redirect('/'));
 
+///////////////////////////// Checking Data///////////////////////////
+pool.query("INSERT INTO tokimons (name, weight, height, fly, fight, fire, water, electric, ice, total, trainer)VALUES('Sumj', 120, 125, 0, 55, 90, 0, 0, 0, 105, 'Kevin') ON CONFLICT (name) DO NOTHING", (err, res) => {
+  if (err) {
+      console.log(err, res);
+  }
+});//WORKS
+
+pool.query("INSERT INTO tokimons (name, weight, height, fly, fight, fire, water, electric, ice, total, trainer)VALUES('Dimi', 145, 115, 0, 60, 0, 90, 0, 24, 174, 'Kevin') ON CONFLICT (name) DO NOTHING", (err, res) => {
+  if (err) {
+      console.log(err, res);
+  }
+});//WORKS
+
+pool.query("INSERT INTO tokimons (name, weight, height, fly, fight, fire, water, electric, ice, total, trainer)VALUES('Clate', 112, 123, 88, 40, 0, 0, 9 , 0, 137, 'Alvin') ON CONFLICT (name) DO NOTHING", (err, res) => {
+  if (err) {
+      console.log(err, res);
+  }
+});//WORKS
+///////////////////////////// Checking Data///////////////////////////
+
 app.post('/tokimon', (req,res) => {
     var getUserQuery = `select * from tokimon order by name ASC;`;
     //console.log(getUserQuery);
