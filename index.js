@@ -54,6 +54,8 @@ app.post('/add',async (req,res) => {
   var Fr = Number(req.body.frozen);
   var total = Fl + Fi + Fir + Wa + El + Fr;
 
+  console.log(Na);
+
   var judgement = 'news';
   if(Na == ''||Tr==''){
     judgement = 'empty';
